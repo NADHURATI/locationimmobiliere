@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/reservation.css" rel="stylesheet">
+    <title>Réserver une propriété</title>
+</head>
+<body>
+    <header>
+        <h1>Réservez votre Maison de Rêve</h1>
+        <p>Des maisons et des appartements parfaits pour vos vacances</p>
+    </header>
+
+    <div class="intro">
+        <h2>Bienvenue sur notre plateforme de réservation</h2>
+        <p>Choisissez la maison ou l'appartement qui correspond à vos envies et profitez d'un séjour inoubliable !</p>
+    </div>
+    
+    <div class="container">
+
+        <!-- Section pour afficher les maisons -->
+        <section class="section" id="properties">
+            <h2>Maison Disponibles</h2>
+           
+            <% properties.forEach(property => { %>
+                <div class="card">
+                    <img src="image/ext_0_3887844.jpg " alt="Maison au bord de la mer">
+                   
+                    <h3><%= property.title %></h3>
+                    <p>Prix: <%= property.price %>€/nuit</p>
+                    <p><%= property.description %></p>
+                    <a href="/reserve-property/<%= property.id %>" class="btn">Réservez Maintenant</a>
+                </div>
+                <% }) %>
+
+        </section>    
+        
+        
+        <% properties.forEach(property => { %>
+            <div class="card">
+                <img src="image/appartement-de-luxe-moderne-avec-vue.jpg" alt="Appartement en centre-ville">
+               
+                <h3><%= property.title %></h3>
+                <p>Prix: <%= property.price %>€/nuit</p>
+                <p><%= property.description %></p>
+                <a href="/reserve-property/<%= property.id %>" class="btn">Réservez Maintenant</a>
+            </div>
+            <% }) %>
+
+        <!-- Formulaire pour ajouter un nouveau client -->
+        <section class="section" id="add-client">
+            <h2>Créer un Nouveau Client</h2>
+            <form action="/add-client" method="post">
+                <label for="client-name">Nom:</label>
+                <input type="text" id="client-name" name="clientName" placeholder="Entrez le nom du client" required>
+                <label for="client-email">Email:</label>
+                <input type="email" id="client-email" name="clientEmail" placeholder="Entrez l'email du client" required>
+                <label for="client-telephone">Téléphone:</label>
+                <input type="telephone" id="client-telephone" name="clientTelephone" placeholder="Entrez le telephone du client" required>
+                <button type="submit">Ajouter le Client</button>
+            </form>
+        </section>
+
+        <!-- Formulaire pour réserver une maison -->
+        <section class="section" id="reserve-property">
+            <h2>Réserver une Maison</h2>
+            <form action="reserve-property" method="post">
+                <label for="select-client">Sélectionnez un Client :</label>
+                <select id="select-client" name="select-client" required>       
+                  <option value="" disabled selected>-- Choisissez un client --</option>
+                  <% clients.forEach(client => { %>
+                    <option value="<%= client.id %>"><%= client.name %></option>
+                  <% }) %>               
+                </select>
+
+                <label for="select-property">Sélectionnez une Maison:</label>
+                <select id="select-property" name="select-property" required>
+                    <option value="" disabled selected>-- Choisissez une maison --</option>
+                    <% properties.forEach(property => { %>
+                        <option value="<%= property.id %>"><%= property.title %></option>
+                      <% }) %>
+                </select>
+
+                <button type="submit">Réserver</button>
+            </form>
+
+        </section>
+    </div>
+
+</body>
+
+
+
+
+</html>

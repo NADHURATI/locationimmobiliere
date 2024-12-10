@@ -1,0 +1,37 @@
+ <h3>Maison au bord de la mer</h3>
+                <p>Prix: 150€/nuit</p>
+                <p>Venez vous détendre dans cette maison avec vue panoramique sur l'océan. Parfait pour les amoureux de la nature et les familles.</p>
+                <a href="reserve-property.html" class="btn">Réservez Maintenant</a>
+            </div>
+
+
+ <!-- Appartement 1 -->
+ <img src=".jpg" alt="Appartement centre-ville">
+ <div class="card">
+     <h3>Appartement en centre-ville</h3>
+     <p>Prix: 100€/nuit</p>
+     <p>Cet appartement élégant, situé dans le quartier animé du centre-ville, est l'endroit idéal pour un séjour alliant confort et accessibilité.Profitez du confort en plein centre .</p>
+     <a href="reserve-property.html" class="btn">Réservez Maintenant</a>
+ </div>
+
+ 
+<option value="1">Alice Dupont</option>
+<option value="2">Jean Martin</option>
+<option value="3">Claire Bernard</option>
+
+<input type="radio"/>
+<option value="1">Maison en bord de mer</option>
+<input type="radio"/>
+<option value="2">Appartement en centre-ville</option>
+
+
+<p>Explorez une sélection de maisons uniques, parfaites pour vos vacances, vos séjours professionnels ou vos escapades en famille. Que vous rêviez de vous détendre au bord de la mer, de profiter d'une retraite tranquille à la montagne, ou de découvrir une ville vibrante, nous avons la maison idéale pour vous. </p>
+<img src="maison-bord-mer-floride.jpg" alt="Maison">
+
+<!-- Section des coordonnées -->
+<section>
+    <h2>Nos Coordonnées</h2>
+    <p><strong>Numéro de téléphone :</strong> <%= coordonnees.numero %></p>
+    <p><strong>Horaires :</strong> <%= coordonnees.horaire %></p>
+</section>
+</main>
