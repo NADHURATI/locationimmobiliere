@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Définition du charset UTF-8 pour la gestion des caractères spéciaux et de la compatibilité mobile -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Lien vers le fichier CSS spécifique pour la page d'accueil -->
     <link rel="stylesheet" href="/css/accueil.css">
+    <!-- Titre de la page affiché dans l'onglet du navigateur -->
     <title>Accueil - Réservation de Maisons ou d'Appartements</title>
 </head>
 <body>
 
 <header>
+    <!-- En-tête de la page avec un titre principal et un texte d'introduction -->
     <h1>Bienvenue sur la Plateforme de Réservation de Maisons</h1>
+    <!-- Affichage du texte d'introduction passé du serveur avec la variable introText -->
     <p><%= introText %></p>
 </header>
 
 <main>
-    <!-- Section des meilleures offres -->
+   <!-- Section affichant les meilleures offres disponibles -->
     <section>
         <h2>Nos Meilleures Offres</h2>
         <div class="property-list">
-            <div class="property-card">
-                <img src="images/maison-bord-mer-floride.jpg" alt="Maison au bord de la mer">
-                
+            <!-- Affichage d'une carte avec une image d'une maison au bord de la mer -->
+            <div class="card">
+                <img src="/image/maison-bord-mer-floride.jpg" alt="Maison au bord de la mer floride">   
             </div>
-        </div>
+        </div>     
+    </section>
+     <!-- Section d'informations supplémentaires pour le contact -->
+    <section class="infos">
+        <!-- Informations de contact, incluant le numéro de téléphone et les horaires d'ouverture -->
+        <h3>Information</h3>
+        <p><strong>Téléphone:</strong>89 67 45 23 01</p>
+        <p><strong>Horaires:</strong> Lundi - Vendredi: 07h - 20h et Samedi: 07h - 16h</p>
     </section>
 
-    
-
 <footer>
+    <!-- Pied de page avec des informations sur les droits d'auteur et des liens de navigation -->
     <div class="footer-content">
+        <!-- Copyright et mention des droits réservés -->
         <p>&copy; 2024 Réservez votre Maison. Tous droits réservés.</p>
+        <!-- Liste des liens de navigation pour d'autres pages du site -->
         <ul class="footer-links">
             <li><a href="/about">À propos</a></li>
             <li><a href="/contact">Contact</a></li>

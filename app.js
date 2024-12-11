@@ -33,16 +33,18 @@ app.set("view engine", "ejs");
 // précise le répertoire 'public' qui contient les fichiers statics
 app.use(express.static("public"));
 
-
+// Je vais créer une route "/accueil" en utilise la méthode de type "GET"
 app.get("/accueil", (req, res) => {
+    // Il définit une variable constante appelée introText contenant un message descriptif.
     const introText = "Explorez une sélection de maisons uniques, parfaites pour vos vacances, vos séjours professionnels ou vos escapades en famille. Que vous rêviez de vous détendre au bord de la mer, de profiter d'une retraite tranquille à la montagne, ou de découvrir une ville vibrante, nous avons la maison idéale pour vous.";
     const headerImage = "/images/maison-bord-mer-floride.jpg"; // Chemin dynamique vers l'image
-
+    // Le code utilise la méthode res.render pour rendre la vue 'accueil'.
     res.render('accueil', { introText, headerImage });
 });
 
-
+// Définit une chemin "/reservation" en utilise la méthode "GET".
 app.get("/reservation", (req,res) => {
+    // Cette ligne initialise un tableau nommé properties qui est probablement utilisé pour stocker une lidte de propriétés.
     const properties = [
         {
             id: 1,
@@ -59,36 +61,36 @@ app.get("/reservation", (req,res) => {
             image: '/images/appartement-de-luxe-moderne-avec-vue.jpg'
         },
     ];
-
-    const clients = [
+    const clients = [  // Liste des clients disponibles pour la réservation
         {id: 1, name: 'Alice Dupont'},
         {id: 2, name: 'Jean Martin'},
         {id: 3, name: 'Claire Oceane'}
     ];
-
+    // Rendu de la page de réservation avec les listes de propriétés et de clients.
     res.render('reservation', {properties, clients});
 });
 
-
+// Route pour afficher la page des conditions d'utilisation
 app.get("/terms", (req, res) => {
-
     const introText = "Vous devez avoir au moins 18 ans pour effectuer une réservation. Toute réservation doit être effectuée par une personne juridiquement capable d'engager un contrat."
+    // Rend la vue 'terms' pour les conditions d'utilisation 
     res.render("terms",{introText});  
 });
 
+// Route pour afficher la page de contact
 app.get('/contact', (req, res) => {
-    const coordonnees = {
-        numero: "89 67 45 23 01",
-        horaire: "Lundi - Vendredi : 07h00 - 20h00 et Samedi : 07h00 - 18h00",
+    const coordonnees = {  // Définition des coordonnées de contact
+        numero: "89 67 45 23 01",  // Numéro de téléphone
+        horaire: "Lundi - Vendredi : 07h00 - 20h00 et Samedi : 07h00 - 16h00",  // Horaires de disponibilité
     };
-    res.render('contact', { coordonnees });
+    res.render('contact', { coordonnees }); // Rend la vue 'contact' avec les information de contact
 });
 
-
+// Route pour afficher la page "A propos"
 app.get("/about", (req, res) => {
-
+    // Texte d'introduction affiché sur la page "À propos".
     const introText = "Nous sommes fiers de vous offrir une solution simple, fiable et conviviale pour réserver la maison ou l'appartement de vos rêves, que ce soit pour vos vacances, vos voyages d'affaires, ou toute autre occasion spéciale. Notre mission est de rendre la recherche et la réservation de propriétés aussi agréables que le séjour lui-même."
-    res.render("about", {introText});
+    res.render("about", {introText});  // Rendu de la vue "about" avec l'introduction
 });
 
 
