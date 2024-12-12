@@ -1,58 +1,80 @@
-/* Global styles */
+/* terms.css */
+
+/* Style général */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
     line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-h1, h2 {
-    color: #4CAF50;
-    text-align: center;
-}
-
-p {
-    margin: 10px 0;
-}
-
-/* Header */
+/* En-tête */
 header {
     background-color: #4CAF50;
     color: white;
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Main content */
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section principale */
 main {
-    padding: 20px;
+    margin: 20px auto;
     max-width: 800px;
-    margin: 0 auto;
-}
-
-section {
-    background-color: white;
     padding: 20px;
-    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
+main section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Pied de page */
 footer {
-    background-color:black;
+    background-color: black;
     color: white;
     padding: 10px 0;
     text-align: center;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
-footer .footer-content {
-    max-width: 800px;
-    margin: 0 auto;
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
 }
 
 footer .footer-links {
@@ -68,12 +90,12 @@ footer .footer-links li {
     display: inline;
 }
 
-footer .footer-links a {
-    color: #4CAF50;
+footer .footer-links li a {
+    color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 1rem;
 }
 
-footer .footer-links a:hover {
+footer .footer-links li a:hover {
     text-decoration: underline;
 }
